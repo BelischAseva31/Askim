@@ -31,7 +31,7 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(circle at 20% 80%, rgba(255, 120, 0, 0.15) 0%, transparent 50%),
-                                 radial-gradient(circle at 80% 20%, rgba(255, 165, 0, 0.1) 0%, transparent 50%);
+                        radial-gradient(circle at 80% 20%, rgba(255, 165, 0, 0.1) 0%, transparent 50%);
             animation: bgMove 20s ease-in-out infinite;
             z-index: 0;
         }
@@ -169,8 +169,8 @@
             border-radius: 30px;
             padding: 60px 50px;
             box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6),
-                                 0 0 60px rgba(255, 119, 0, 0.15),
-                                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                        0 0 60px rgba(255, 119, 0, 0.15),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
             max-width: 650px;
             width: 100%;
             text-align: center;
@@ -273,13 +273,13 @@
             border-color: #34d399;
             color: white;
             box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4),
-                                 0 0 20px rgba(16, 185, 129, 0.3);
+                        0 0 20px rgba(16, 185, 129, 0.3);
         }
 
         .evet:hover {
             transform: translateY(-4px) scale(1.05);
             box-shadow: 0 20px 40px rgba(16, 185, 129, 0.6),
-                                 0 0 40px rgba(16, 185, 129, 0.5);
+                        0 0 40px rgba(16, 185, 129, 0.5);
             border-color: #6ee7b7;
         }
 
@@ -288,13 +288,13 @@
             border-color: #f87171;
             color: white;
             box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4),
-                                 0 0 20px rgba(239, 68, 68, 0.3);
+                        0 0 20px rgba(239, 68, 68, 0.3);
         }
 
         .hayir:hover {
             transform: translateY(-4px) scale(1.05);
             box-shadow: 0 20px 40px rgba(239, 68, 68, 0.6),
-                                 0 0 40px rgba(239, 68, 68, 0.5);
+                        0 0 40px rgba(239, 68, 68, 0.5);
             border-color: #fca5a5;
         }
 
@@ -339,142 +339,63 @@
         .lily-container {
             position: relative;
             text-align: center;
-            width: 300px; /* Adjusted size for new flower */
-            height: 450px;
         }
 
-        /* ----- NEW FLOWER ANIMATION STYLES (replacing SVG) ----- */
-        .new-flower-wrapper {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 100%;
+        .lily {
+            width: 500px;
+            height: 500px;
         }
-
-        .flower-stem-container {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 80%;
-            width: 10px;
-        }
-
-        .stem {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 8px;
-            height: 0;
-            background: #22c55e;
-            border-radius: 4px 4px 0 0;
-            animation: stemGrow 1s ease-out 0s forwards;
-        }
-
-        @keyframes stemGrow {
-            to { height: 100%; }
-        }
-
-        .leaf {
-            position: absolute;
-            width: 50px;
-            height: 100px;
-            background: #10b981;
-            border-radius: 50%;
-            opacity: 0;
-            animation: leafAppear 1s ease-out 0.8s forwards;
-            bottom: 15%;
-            z-index: 1;
-        }
-
-        .leaf-left {
-            left: -40px;
-            transform: rotate(-45deg) scale(0);
-        }
-
-        .leaf-right {
-            right: -40px;
-            transform: rotate(45deg) scale(0);
-        }
-
-        @keyframes leafAppear {
-            0% { opacity: 0; transform: scale(0); }
-            100% { opacity: 1; transform: scale(1) rotate(var(--rotation, 0deg)); }
-        }
-
-        .flower-head {
-            position: absolute;
-            bottom: 80%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 150px;
-            z-index: 2;
-        }
-
-        .new-petal {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 40px;
-            height: 80px;
-            background: #ec4899; /* Pembe */
-            border-radius: 50% 50% 0 0;
-            transform-origin: 50% 100%; /* Alttan ortaya doğru döner */
-            opacity: 0;
-            animation: petalBloom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-        }
-        
-        /* Set individual rotations and delays for petals */
-        .petal-1 { transform: translate(-50%, -100%) rotate(0deg) scale(0); animation-delay: 1.5s; }
-        .petal-2 { transform: translate(-50%, -100%) rotate(60deg) scale(0); animation-delay: 1.6s; }
-        .petal-3 { transform: translate(-50%, -100%) rotate(120deg) scale(0); animation-delay: 1.7s; }
-        .petal-4 { transform: translate(-50%, -100%) rotate(180deg) scale(0); animation-delay: 1.8s; }
-        .petal-5 { transform: translate(-50%, -100%) rotate(240deg) scale(0); animation-delay: 1.9s; }
-        .petal-6 { transform: translate(-50%, -100%) rotate(300deg) scale(0); animation-delay: 2.0s; }
-        
-        @keyframes petalBloom {
-            0% { opacity: 0; transform: translate(-50%, -100%) rotate(var(--rotation, 0deg)) scale(0); }
-            100% { opacity: 1; transform: translate(-50%, -100%) rotate(var(--rotation, 0deg)) scale(1); }
-        }
-
-        .petal-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 25px;
-            height: 25px;
-            background: #fbbf24; /* Sarı */
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            animation: centerPop 0.3s ease-out 2.5s forwards;
-            z-index: 10;
-        }
-
-        @keyframes centerPop {
-            to { transform: translate(-50%, -50%) scale(1); }
-        }
-        /* -------------------------------------------------------- */
 
         @media (max-width: 768px) {
-            .lily-container {
-                 width: 250px; 
-                 height: 380px;
+            .lily {
+                width: 320px;
+                height: 320px;
             }
-            .final-message {
-                font-size: 26px;
-                top: -80px; /* Adjusted position */
-                white-space: normal;
-                width: 90vw;
+        }
+
+        .petal {
+            transform-origin: 200px 200px;
+            animation: petalOpen 3s ease-out forwards;
+            opacity: 0;
+        }
+
+        .petal:nth-child(1) { animation-delay: 0s; }
+        .petal:nth-child(2) { animation-delay: 0.3s; }
+        .petal:nth-child(3) { animation-delay: 0.6s; }
+        .petal:nth-child(4) { animation-delay: 0.9s; }
+        .petal:nth-child(5) { animation-delay: 1.2s; }
+        .petal:nth-child(6) { animation-delay: 1.5s; }
+
+        @keyframes petalOpen {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) rotate(-20deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .stamen-group {
+            animation: stamenGrow 1s ease-out 2s forwards;
+            opacity: 0;
+        }
+
+        @keyframes stamenGrow {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
             }
         }
 
         .final-message {
             position: absolute;
-            top: -100px; /* Adjusted position */
+            top: -150px;
             left: 50%;
             transform: translateX(-50%);
             font-size: 46px;
@@ -489,6 +410,15 @@
             white-space: nowrap;
             text-align: center;
             line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .final-message {
+                font-size: 26px;
+                top: -120px;
+                white-space: normal;
+                width: 90vw;
+            }
         }
 
         @keyframes messageAppear {
@@ -548,24 +478,105 @@
     <div class="final-scene" id="finalScene">
         <div class="lily-container">
             <div class="final-message">Sana çok aşığım<br>lütfen beni affet</div>
-            
-            <div class="new-flower-wrapper">
-                <div class="flower-stem-container">
-                    <div class="stem"></div>
-                    <div class="leaf leaf-left" style="--rotation: -45deg;"></div>
-                    <div class="leaf leaf-right" style="--rotation: 45deg;"></div>
-                </div>
-                <div class="flower-head">
-                    <div class="new-petal petal-1" style="--rotation: 0deg;"></div>
-                    <div class="new-petal petal-2" style="--rotation: 60deg;"></div>
-                    <div class="new-petal petal-3" style="--rotation: 120deg;"></div>
-                    <div class="new-petal petal-4" style="--rotation: 180deg;"></div>
-                    <div class="new-petal petal-5" style="--rotation: 240deg;"></div>
-                    <div class="new-petal petal-6" style="--rotation: 300deg;"></div>
-                    <div class="petal-center"></div>
-                </div>
-            </div>
-            </div>
+            <svg class="lily" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(200, 200)">
+                    <g class="petal" transform="rotate(0)">
+                        <path d="M 0,-70 Q -25,-95 -35,-145 Q -30,-165 0,-175 Q 30,-165 35,-145 Q 25,-95 0,-70" 
+                              fill="url(#petal-gradient)" stroke="#d946a6" stroke-width="2"/>
+                        <ellipse cx="-12" cy="-120" rx="9" ry="18" fill="#c026d3" opacity="0.7"/>
+                        <ellipse cx="8" cy="-125" rx="7" ry="15" fill="#c026d3" opacity="0.7"/>
+                        <circle cx="-8" cy="-110" r="3" fill="#7c3aed" opacity="0.8"/>
+                        <circle cx="5" cy="-115" r="2.5" fill="#7c3aed" opacity="0.8"/>
+                    </g>
+                    
+                    <g class="petal" transform="rotate(60)">
+                        <path d="M 0,-70 Q -25,-95 -35,-145 Q -30,-165 0,-175 Q 30,-165 35,-145 Q 25,-95 0,-70" 
+                              fill="url(#petal-gradient-2)" stroke="#d946a6" stroke-width="2"/>
+                        <ellipse cx="-10" cy="-120" rx="8" ry="16" fill="#d946a6" opacity="0.8"/>
+                        <ellipse cx="10" cy="-125" rx="6" ry="14" fill="#d946a6" opacity="0.8"/>
+                        <circle cx="-6" cy="-110" r="2.5" fill="#7c3aed" opacity="0.8"/>
+                    </g>
+                    
+                    <g class="petal" transform="rotate(120)">
+                        <path d="M 0,-70 Q -25,-95 -35,-145 Q -30,-165 0,-175 Q 30,-165 35,-145 Q 25,-95 0,-70" 
+                              fill="url(#petal-gradient)" stroke="#d946a6" stroke-width="2"/>
+                        <ellipse cx="-12" cy="-120" rx="9" ry="18" fill="#c026d3" opacity="0.7"/>
+                        <ellipse cx="8" cy="-125" rx="7" ry="15" fill="#c026d3" opacity="0.7"/>
+                        <circle cx="-8" cy="-110" r="3" fill="#7c3aed" opacity="0.8"/>
+                    </g>
+                    
+                    <g class="petal" transform="rotate(180)">
+                        <path d="M 0,-70 Q -25,-95 -35,-145 Q -30,-165 0,-175 Q 30,-165 35,-145 Q 25,-95 0,-70" 
+                              fill="url(#petal-gradient-2)" stroke="#d946a6" stroke-width="2"/>
+                        <ellipse cx="-10" cy="-120" rx="8" ry="16" fill="#d946a6" opacity="0.8"/>
+                        <ellipse cx="10" cy="-125" rx="6" ry="14" fill="#d946a6" opacity="0.8"/>
+                    </g>
+                    
+                    <g class="petal" transform="rotate(240)">
+                        <path d="M 0,-70 Q -25,-95 -35,-145 Q -30,-165 0,-175 Q 30,-165 35,-145 Q 25,-95 0,-70" 
+                              fill="url(#petal-gradient)" stroke="#d946a6" stroke-width="2"/>
+                        <ellipse cx="-12" cy="-120" rx="9" ry="18" fill="#c026d3" opacity="0.7"/>
+                        <ellipse cx="8" cy="-125" rx="7" ry="15" fill="#c026d3" opacity="0.7"/>
+                    </g>
+                    
+                    <g class="petal" transform="rotate(300)">
+                        <path d="M 0,-70 Q -25,-95 -35,-145 Q -30,-165 0,-175 Q 30,-165 35,-145 Q 25,-95 0,-70" 
+                              fill="url(#petal-gradient-2)" stroke="#d946a6" stroke-width="2"/>
+                        <ellipse cx="-10" cy="-120" rx="8" ry="16" fill="#d946a6" opacity="0.8"/>
+                        <ellipse cx="10" cy="-125" rx="6" ry="14" fill="#d946a6" opacity="0.8"/>
+                    </g>
+                    
+                    <g class="stamen-group">
+                        <line x1="0" y1="0" x2="0" y2="-65" stroke="#fbbf24" stroke-width="4"/>
+                        <line x1="0" y1="0" x2="-18" y2="-60" stroke="#fbbf24" stroke-width="3.5"/>
+                        <line x1="0" y1="0" x2="18" y2="-60" stroke="#fbbf24" stroke-width="3.5"/>
+                        <line x1="0" y1="0" x2="-30" y2="-55" stroke="#fbbf24" stroke-width="3"/>
+                        <line x1="0" y1="0" x2="30" y2="-55" stroke="#fbbf24" stroke-width="3"/>
+                        <line x1="0" y1="0" x2="-35" y2="-45" stroke="#fbbf24" stroke-width="2.5"/>
+                        <line x1="0" y1="0" x2="35" y2="-45" stroke="#fbbf24" stroke-width="2.5"/>
+                        
+                        <circle cx="0" cy="-65" r="5" fill="#ff8c00">
+                            <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="-18" cy="-60" r="4.5" fill="#ffa500">
+                            <animate attributeName="r" values="4.5;5.5;4.5" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="18" cy="-60" r="4.5" fill="#ffa500">
+                            <animate attributeName="r" values="4.5;5.5;4.5" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="-30" cy="-55" r="4" fill="#ff7700">
+                            <animate attributeName="r" values="4;5;4" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="30" cy="-55" r="4" fill="#ff7700">
+                            <animate attributeName="r" values="4;5;4" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="-35" cy="-45" r="3.5" fill="#fbbf24">
+                            <animate attributeName="r" values="3.5;4.5;3.5" dur="2s" begin="1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="35" cy="-45" r="3.5" fill="#fbbf24">
+                            <animate attributeName="r" values="3.5;4.5;3.5" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <circle cx="0" cy="0" r="15" fill="#22c55e">
+                            <animate attributeName="r" values="15;17;15" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+                </g>
+                
+                <defs>
+                    <linearGradient id="petal-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#fce7f3;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#f9a8d4;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="petal-gradient-2" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#fbb6ce;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f472b6;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
     </div>
 
     <script>
